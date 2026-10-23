@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dhanbad-elite05.vercel.app/sitemap.xml
