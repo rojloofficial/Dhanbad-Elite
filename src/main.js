@@ -426,4 +426,30 @@ function openProfileModal(id) {
   openModal(modal);
 }
 
+// --------------------------------------------------------------------------
+// 5. Popular Keywords & Location Tags Interactive Filter
+// --------------------------------------------------------------------------
+document.addEventListener('click', (e) => {
+  const tag = e.target.closest('.locality-tag-chip, .keyword-tag');
+  if (!tag) return;
+  
+  const rawSearch = tag.getAttribute('data-search');
+  if (!rawSearch) return;
+
+  const searchInput = document.getElementById('profileSearchInput');
+  if (searchInput) {
+    let term = rawSearch.replace(/Dhanbad/gi, '').replace(/[–-]/g, ' ').trim();
+    if (!term) term = rawSearch;
+    
+    searchInput.value = term;
+    searchInput.dispatchEvent(new Event('input', { bubbles: true }));
+    
+    const listingsSection = document.getElementById('listings');
+    if (listingsSection) {
+      listingsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+});
+
+
 

@@ -2083,3 +2083,180 @@ h1, h2, h3, h4, h5, h6 {
     scroll-behavior: auto !important;
   }
 }
+
+
+/* --------------------------------------------------------------------------
+   21. Service Locations Cloud & Popular Keywords Directory
+   -------------------------------------------------------------------------- */
+.localities-index-box {
+  margin-top: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: clamp(20px, 3.5vw, 32px);
+  box-shadow: var(--shadow-sm);
+}
+
+.localities-index-head {
+  margin-bottom: 20px;
+}
+
+.index-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  background: rgba(255, 183, 3, 0.1);
+  border: 1px solid rgba(255, 183, 3, 0.25);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+}
+
+.localities-index-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.localities-index-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.locations-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.locality-tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.locality-tag-chip:hover,
+.locality-tag-chip:focus-visible {
+  background: rgba(255, 77, 109, 0.15);
+  border-color: var(--accent-light);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Popular Keywords Section */
+.keywords-section {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: #050711;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.keywords-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 900px) {
+  .keywords-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.keyword-cat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: clamp(20px, 3vw, 26px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color var(--transition-smooth);
+}
+
+.keyword-cat-card:hover {
+  border-color: rgba(255, 183, 3, 0.35);
+}
+
+.keyword-cat-card:last-child {
+  grid-column: 1 / -1;
+}
+
+.keyword-cat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.keyword-cat-icon {
+  font-size: 1.25rem;
+}
+
+.keyword-cat-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: var(--gold-light);
+  flex: 1;
+  margin: 0;
+}
+
+.keyword-count-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.keywords-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-primary) rgba(255, 255, 255, 0.05);
+}
+
+.keyword-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-sm);
+  padding: 5px 11px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  white-space: normal;
+  word-break: break-word;
+}
+
+.keyword-tag:hover,
+.keyword-tag:focus-visible {
+  background: rgba(255, 183, 3, 0.12);
+  border-color: var(--gold-primary);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
