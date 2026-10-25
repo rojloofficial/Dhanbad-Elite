@@ -414,6 +414,11 @@ h1, h2, h3, h4, h5, h6 {
   height: 76px;
   gap: clamp(16px, 2.5vw, 40px);
   width: 100%;
+  max-width: 1560px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 3vw, 48px);
+  padding-right: clamp(20px, 3vw, 48px);
 }
 
 .brand-link {
@@ -623,12 +628,32 @@ h1, h2, h3, h4, h5, h6 {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: clamp(10px, 1.2vw, 16px);
+  gap: clamp(12px, 1.4vw, 18px);
   flex-shrink: 0;
   margin-left: auto;
 }
 
-/* Telegram is already prominently in hero, drawer, footer; keep header clean and spacious */
+.header-call-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(42, 60, 255, 0.35);
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-call-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(42, 60, 255, 0.55);
+}
+
+/* Keep header clean, spacious, and uncluttered across all screen sizes */
+.header-actions .city-indicator,
 .header-actions .header-tg-btn,
 .header-actions .btn-whatsapp {
   display: none !important;
@@ -637,6 +662,9 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .header-actions .header-call-btn {
     display: none;
+  }
+  .mobile-menu-btn {
+    margin-right: 4px;
   }
 }
 
