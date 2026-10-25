@@ -411,7 +411,9 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 76px;
+  gap: clamp(16px, 2.5vw, 40px);
+  width: 100%;
 }
 
 .brand-link {
@@ -421,6 +423,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-shrink: 0;
   text-decoration: none;
   min-width: max-content;
+  margin-right: clamp(18px, 2.4vw, 36px);
 }
 
 .brand-crest {
@@ -473,20 +476,24 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
-@media (min-width: 1120px) {
+@media (min-width: 1180px) {
   .desktop-nav {
     display: flex;
     align-items: center;
-    gap: clamp(10px, 1.3vw, 22px);
+    justify-content: center;
+    gap: clamp(14px, 1.6vw, 26px);
     list-style: none;
+    margin: 0 auto;
   }
 
   .desktop-nav a {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-secondary);
     position: relative;
-    padding: 6px 0;
+    padding: 8px 4px;
+    white-space: nowrap !important;
+    transition: color var(--transition-fast);
   }
 
   .desktop-nav a:hover,
@@ -515,19 +522,21 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     display: inline-flex;
     align-items: center;
+    white-space: nowrap !important;
   }
 
   .nav-dropdown-trigger {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    font-size: 0.88rem;
+    gap: 6px;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-secondary);
-    padding: 6px 0;
+    padding: 8px 4px;
     cursor: pointer;
     background: none;
     border: none;
+    white-space: nowrap !important;
     transition: color var(--transition-fast);
   }
 
@@ -614,31 +623,35 @@ h1, h2, h3, h4, h5, h6 {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(10px, 1.2vw, 16px);
   flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* Telegram is already prominently in hero, drawer, footer; keep header clean and spacious */
+.header-actions .header-tg-btn,
+.header-actions .btn-whatsapp {
+  display: none !important;
 }
 
 @media (max-width: 768px) {
-  .header-actions .header-call-btn,
-  .header-actions .header-tg-btn,
-  .header-actions .btn-whatsapp {
+  .header-actions .header-call-btn {
     display: none;
   }
 }
 
-@media (min-width: 1120px) and (max-width: 1260px) {
+@media (min-width: 1180px) and (max-width: 1300px) {
   .desktop-nav {
-    gap: 8px;
+    gap: clamp(10px, 1.3vw, 18px);
   }
-  .desktop-nav a {
-    font-size: 0.8rem;
-  }
-  .header-actions {
-    gap: 6px;
+  .desktop-nav a,
+  .nav-dropdown-trigger {
+    font-size: 0.84rem;
+    padding: 6px 2px;
   }
   .header-actions .btn {
-    padding: 7px 10px;
-    font-size: 0.78rem;
+    padding: 7px 12px;
+    font-size: 0.82rem;
   }
 }
 
@@ -695,7 +708,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-full);
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1520px) {
   .city-indicator {
     display: inline-flex;
   }
@@ -715,7 +728,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-shrink: 0;
 }
 
-@media (min-width: 1120px) {
+@media (min-width: 1180px) {
   .mobile-menu-btn {
     display: none;
   }
