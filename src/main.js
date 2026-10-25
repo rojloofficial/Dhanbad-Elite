@@ -13,7 +13,7 @@ const state = {
 
 // Concierge Contacts for Dhanbad Elite05
 const CONCIERGE_TELEGRAM = 'https://t.me/i_am_turtle';
-const CONCIERGE_CALL = '6284221979';
+const CONCIERGE_CALL = '8252377842';
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
