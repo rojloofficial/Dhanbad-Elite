@@ -2034,42 +2034,164 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --------------------------------------------------------------------------
-   19. Mobile Sticky Action Bar
+   19. Floating Fixed Action Pill (with Animation)
    -------------------------------------------------------------------------- */
-.mobile-action-bar {
+.floating-action-pill {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(8, 11, 24, 0.96);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid var(--border-subtle);
-  padding: 10px 16px calc(10px + var(--safe-bottom));
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 998;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 10px;
+  gap: 8px;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1.5px solid #ffccd5;
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45), 0 0 20px rgba(255, 77, 109, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  animation: floatPillBounce 3.2s ease-in-out infinite, floatPillGlow 3.2s ease-in-out infinite;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  max-width: calc(100vw - 20px);
 }
 
-@media (min-width: 992px) {
-  .mobile-action-bar {
-    display: none;
+.floating-action-pill:hover {
+  animation-play-state: paused;
+  border-color: #ff4d6d;
+}
+
+@keyframes floatPillBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-6px);
   }
 }
 
-.mobile-action-btn {
-  flex: 1;
+@keyframes floatPillGlow {
+  0%, 100% {
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45), 0 0 16px rgba(255, 77, 109, 0.2);
+  }
+  50% {
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.55), 0 0 26px rgba(255, 77, 109, 0.45);
+  }
+}
+
+.pill-btn-call {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 11px 12px;
+  gap: 7px;
+  padding: 9px 20px;
   border-radius: var(--radius-full);
-  font-size: 0.88rem;
+  background: linear-gradient(135deg, #ff2a55 0%, #e6004c 100%);
+  color: #ffffff !important;
+  font-size: 0.92rem;
   font-weight: 700;
-  min-height: 44px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(255, 42, 85, 0.4);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.pill-btn-call:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(255, 42, 85, 0.6);
+  color: #ffffff !important;
+}
+
+.pill-btn-call:active {
+  transform: scale(0.97);
+}
+
+.pill-btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 20px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #25D366 0%, #1ea952 100%);
+  color: #ffffff !important;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.pill-btn-whatsapp:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+  color: #ffffff !important;
+}
+
+.pill-btn-whatsapp:active {
+  transform: scale(0.97);
+}
+
+.pill-btn-profiles {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 42, 85, 0.04);
+  border: 1.5px solid #ff2a55;
+  color: #ff2a55 !important;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.pill-btn-profiles:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: rgba(255, 42, 85, 0.12);
+  color: #e6004c !important;
+}
+
+.pill-btn-profiles:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 440px) {
+  .floating-action-pill {
+    bottom: 16px;
+    padding: 5px 6px;
+    gap: 6px;
+  }
+  .pill-btn-call,
+  .pill-btn-whatsapp {
+    padding: 8px 13px;
+    font-size: 0.82rem;
+    gap: 5px;
+  }
+  .pill-btn-profiles {
+    padding: 7px 12px;
+    font-size: 0.82rem;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 335px) {
+  .floating-action-pill {
+    gap: 4px;
+    padding: 4px 5px;
+  }
+  .pill-btn-call,
+  .pill-btn-whatsapp,
+  .pill-btn-profiles {
+    padding: 7px 9px;
+    font-size: 0.74rem;
+    gap: 4px;
+  }
 }
 
 /* --------------------------------------------------------------------------
