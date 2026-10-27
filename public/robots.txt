@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dhanbad-elite05.vercel.app/sitemap.xml
+Sitemap: https://dhanbad-elite.vercel.app/sitemap.xml
